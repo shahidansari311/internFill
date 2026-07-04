@@ -2,7 +2,7 @@ import https from 'https';
 import http from 'http';
 
 // Configuration: load from environment variables or use fallbacks
-const SERVER_URL = process.env.SERVER_URL || 'https://your-render-app.onrender.com/ping';
+const SERVER_URL = process.env.SERVER_URL || 'https://internfill.onrender.com/ping' ;
 const INTERVAL_MINUTES = parseInt(process.env.PING_INTERVAL_MINUTES || '10', 10);
 
 console.log(`[Ping Cron] Starting keep-alive cron for: ${SERVER_URL}`);
