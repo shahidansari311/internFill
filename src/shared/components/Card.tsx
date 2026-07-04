@@ -9,6 +9,7 @@ export interface CardProps {
   padding?: 'sm' | 'md' | 'lg';
   variant?: 'default' | 'glass' | 'gradient';
   onClick?: () => void;
+  style?: React.CSSProperties;
 }
 
 export function Card({
@@ -18,6 +19,7 @@ export function Card({
   padding = 'md',
   variant = 'default',
   onClick,
+  style,
 }: CardProps) {
   return (
     <motion.div
@@ -26,6 +28,7 @@ export function Card({
       onClick={onClick}
       role={onClick ? 'button' : undefined}
       tabIndex={onClick ? 0 : undefined}
+      style={style}
     >
       {children}
     </motion.div>

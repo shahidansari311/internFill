@@ -41,6 +41,11 @@ interface FieldsDetectedMessage {
   fields: DetectedFormField[];
 }
 
+interface GetProfileDataMessage {
+  type: 'GET_PROFILE_DATA';
+  profileId: string;
+}
+
 interface DetectedFormField {
   element: string;
   fieldType: string;
@@ -48,7 +53,16 @@ interface DetectedFormField {
   selector: string;
 }
 
+interface GenerateAIAnswerMessage {
+  type: 'GENERATE_AI_ANSWER';
+  profile: any;
+  questionType: 'whyHire' | 'projectsDetail';
+  questionText?: string;
+}
+
 type ExtensionMessage =
   | AutofillMessage
   | DetectFieldsMessage
-  | FieldsDetectedMessage;
+  | FieldsDetectedMessage
+  | GetProfileDataMessage
+  | GenerateAIAnswerMessage;
